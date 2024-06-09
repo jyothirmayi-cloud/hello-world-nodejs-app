@@ -24,11 +24,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd hello-world-nodejs-app
           npm install
 
       - name: Build Docker image
-        run: docker build -t hello-world -f hello-world-nodejs-app/Dockerfile .
+        run: docker build -t hello-world .
 
       - name: Log in to Amazon ECR
         id: login-ecr
