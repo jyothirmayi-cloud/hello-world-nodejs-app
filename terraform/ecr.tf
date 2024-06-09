@@ -1,9 +1,7 @@
-provider "aws" {
-  region = var.aws_region
-}
-
+# Data source to check if the ECR repository already exists
 data "aws_ecr_repository" "hello_world" {
   name = "hello-world"
+  # This will return the repository if it exists
 }
 
 resource "aws_ecr_repository" "hello_world" {
