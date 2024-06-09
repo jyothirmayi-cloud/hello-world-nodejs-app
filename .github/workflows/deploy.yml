@@ -19,7 +19,9 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd hello-world-nodejs-app
+          npm install
 
       - name: Build Docker image
         run: docker build -t hello-world -f hello-world-nodejs-app/Dockerfile .
