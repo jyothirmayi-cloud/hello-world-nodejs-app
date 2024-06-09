@@ -46,6 +46,11 @@ jobs:
           region: ${{ secrets.AWS_REGION }}
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
+          
+      - name: Create ECR repository if it does not exist
+        run: |
+          aws ecr describe-repositories --repository-names hello-world --region ${{ secrets.AWS_REGION }} || \
+          aws ecr create-repository --repository-name hello-world --region ${{ secrets.AWS_REGION }}
 
       - name: Build, tag, and push Docker image
         env:
