@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build Docker image
-        run: docker build -t hello-world .
+        run: docker build -t hello-world -f hello-world-nodejs-app/Dockerfile .
 
       - name: Log in to Amazon ECR
         id: login-ecr
