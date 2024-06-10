@@ -6,9 +6,7 @@ resource "aws_ecr_repository" "hello_world" {
   name  = "hello-world"
 }
 locals {
-  repository_url = length(aws_ecr_repository.hello_world) > 0 ?
-    aws_ecr_repository.hello_world[0].repository_url :
-    data.aws_ecr_repository.hello_world.repository_url
+  repository_url = length(aws_ecr_repository.hello_world) > 0 ? aws_ecr_repository.hello_world[0].repository_url : data.aws_ecr_repository.hello_world.repository_url
 }
 
 
