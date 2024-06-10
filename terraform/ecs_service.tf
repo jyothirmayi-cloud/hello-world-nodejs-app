@@ -33,6 +33,4 @@ resource "aws_ecs_service" "hello_world" {
     security_groups = [aws_security_group.allow_http.id]
   }
 }
-resource "aws_ecs_cluster" "main" {
-  name = "hello-world-cluster"
-}
+
