@@ -10,6 +10,7 @@ resource "aws_iam_role" "ecs_task_execution" {
         Principal = {
           Service = "ecs-tasks.amazonaws.com"
         }
+        Action = "sts:AssumeRole"
       }
     ]
   })
